@@ -2,8 +2,8 @@
 
 ---------------instrucciones------------------
 
-En la carpeta API se encuentra el servidor. Se inicia en el puerto 3000 con "npm start"
-En la carpeta practica-final se encuentra la aplicación de Angular. Iniciar cn "ng serve -o"
+En la carpeta API se encuentra el servidor. Se inicia en el puerto 3000 con *"npm start"*
+En la carpeta practica-final se encuentra la aplicación de Angular. Iniciar cn *"ng serve -o"*
 
 ------------descripción general-----------------
 
