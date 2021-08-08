@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+.column-left {
+  float: left;
+  padding-left:10rem;
+}
+.column-right {
+  float: left;
+  width: 64%;
+}
+h1 {
+margin-left:10rem;
+margin-top: 20px
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+  margin-top:10px;
+  margin-bottom: 20px;
+}
+table {
+  width: 100%;
+}
+p {
+padding:1rem;
+}
+h3 {
+margin:1rem;
+}
+button {
+margin:0.5rem;
+}
+
+

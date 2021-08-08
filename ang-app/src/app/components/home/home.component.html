@@ -1,0 +1,146 @@
+
+<h1>Agenda</h1>
+
+<div class="row">
+ 
+  <div class="column-left">
+    <form class="form" (ngSubmit)="onSubmit()" #formulario="ngForm">
+
+
+      <div class="item form-group">
+      
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput class="form-control"  #nameV="ngModel" type="text" minlength='3' [ngModelOptions]="{standalone: true}" placeholder="Nombre" [(ngModel)]="contact.name">
+          <div *ngIf="nameV.invalid" style="color: red">
+            <div *ngIf="nameV?.errors?.minlength">
+              El nombre tiene que tener como mínimo 3 caracteres
+            </div>
+          </div>
+        </mat-form-field>
+
+      </div>
+
+      <div class="item form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Apellidos</mat-label>
+          <input matInput  #surnameV="ngModel" class="form-control" type="text" minlength="3" placeholder="Apellido/s" [ngModelOptions]="{standalone: true}" [(ngModel)]="contact.surname">
+          <div *ngIf="surnameV.invalid" style="color:red">
+            <div *ngIf="surnameV?.errors?.minlength">
+              El apellido tiene que tener como mínimo 3 caracteres
+            </div>
+          </div>
+        </mat-form-field>
+
+      </div>
+      <div class="item form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>
+            Teléfono
+          </mat-label>
+          <input matInput class="form-control" #phoneV="ngModel" type="text" minlength="7" placeholder="Teléfono" [ngModelOptions]="{standalone: true}" [(ngModel)]="contact.phone" />
+          <div *ngIf="phoneV.invalid" style="color:red">
+            <div *ngIf="phoneV?.errors?.minlength">
+              El teléfono tiene que tener como mínimo 7 caracteres
+            </div>
+          </div>
+        </mat-form-field>
+
+      </div>
+      <div class="item form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Edad</mat-label>
+          <input #ageV="ngModel" matInput min="0" max="125" placeholder="Un número entre 0 y 125" class="form-control" type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="contact.age">
+          
+        </mat-form-field>
+
+      </div>
+      <div class="item form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>DNI</mat-label>
+          <input matInput #dniV="ngModel" class="form-control" type="text" placeholder="NIF (8 números y 1 letra)" pattern="[0-9]{8}[A-Za-z]{1}" [ngModelOptions]="{standalone: true}" [(ngModel)]="contact.dni">
+          <div *ngIf="dniV.invalid" style="color:red">
+            <div *ngIf="dniV?.errors?.pattern">
+              El dni debe seguir el patrón indicado
+            </div>
+          </div>
+        </mat-form-field>
+
+      </div>
+      <div class="item form-group">
+        <mat-form-field appearance="fill">
+          <mat-select placeholder="Color Favorito" [ngModelOptions]="{standalone: true}" [(ngModel)]="contact.favcolor">
+
+            <ng-container>
+
+              <mat-option value="Rojo">Rojo</mat-option>
+              <mat-option value="Azul">Azul</mat-option>
+              <mat-option value="Amarillo">Amarillo</mat-option>
+              <mat-option value="Verde">Verde</mat-option>
+
+            </ng-container>
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+      <label>Selecciona tu género</label>
+      <div class="item form-group">
+        <mat-radio-group aria-label="Select an option" [ngModelOptions]="{standalone: true}" [(ngModel)]="contact.gender">
+          <mat-radio-button value="Hombre">Hombre</mat-radio-button>
+          <mat-radio-button value="Mujer">Mujer</mat-radio-button>
+          <mat-radio-button value="Otro">Otro</mat-radio-button>
+          <mat-radio-button value="No especificado">No especificado</mat-radio-button>
+
+        </mat-radio-group>
+      </div>
+
+      <div class="item">
+        <mat-form-field appearance="fill">
+          <mat-label>Elige una fecha</mat-label>
+          <input matInput [matDatepicker]="picker" placeholder="Fecha Cumpleaños" [ngModelOptions]="{standalone: true}" [(ngModel)]="contact.bday">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      </div>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!formulario.form.valid">Enviar Datos</button>
+    </form>
+
+
+  </div>
+
+    <div class="column-right">
+      <mat-card class="card">
+        <h2>Lista de contactos</h2>
+
+        <mat-list>
+          <mat-list-item *ngFor="let cont of contacts; let i = index">
+            <h3 class="h3">{{ cont.name }} {{ cont.surname }}</h3>
+            <p >{{cont.phone}}</p>
+            <p class="p">{{ cont.age}}</p>
+            <p class="p">{{ cont.dni}}</p>
+            <p class="p">{{ cont.bday }}</p>
+            <p class="p">{{ cont.favcolor}}</p>
+            <p class="p">{{ cont.gender}}</p>
+            
+
+            <button class="button" mat-stroked-button color="primary" (click)=" update( cont._id )" >Edit</button> 
+            <button class="button" mat-stroked-button color="warn"  (click)=" delete( cont._id )">Delete</button>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+
+        </mat-list>
+
+
+      </mat-card>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
