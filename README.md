@@ -1,6 +1,10 @@
 # AngularApp
 
----------------instrucciones------------------
+---------------descripción---------------------
+Aplicación básica MEAN(MongoDB, Express.js, AngularJS, Node.js) con funcionalidades CRUD para una lista de contactos donde cada contacto tiene
+nombre, apellidos, teléfono, edad, DNI, color favorito, género y fecha de cumpleaños. 
+
+---------------instrucciones para ejecutar el código------------------
 
 Recomiendo abrir dos ventanas de visual studio y usar la consola que tienen incorporada.
 En cada ventana ejecutamos "npm i" para instalar las dependencias de node.
@@ -8,7 +12,7 @@ En la carpeta API se encuentra el servidor. Se inicia en el puerto 3000 con "npm
 En la carpeta practica-final se encuentra la aplicación de Angular. Iniciar cn "ng serve -o"
 
 
-------------descripción general-----------------
+------------funcionamiento-----------------
 
 He decidido crear un servicio que se va a encargar de hacer las http request al servidor de express.
 Al iniciarse la página y después de cada inserción, actualización y borrado, el controlador hace un get al servidor
