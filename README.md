@@ -1,6 +1,7 @@
 # AngularApp
 
 ---------------descripción---------------------
+
 Aplicación básica MEAN(MongoDB, Express.js, AngularJS, Node.js) con funcionalidades CRUD para una lista de contactos donde cada contacto tiene
 nombre, apellidos, teléfono, edad, DNI, color favorito, género y fecha de cumpleaños. 
 
