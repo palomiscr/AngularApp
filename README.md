@@ -1,10 +1,12 @@
 # AngularApp
 
 ---------------instrucciones------------------
-en la carpeta API se encuentra el servidor. Se iniciarÃ¡ en el puerto 3000 con "npm start"
-en la carpeta practica-final se encuentra la aplicación de Angular. Iniciar cn "ng serve -o"
+
+En la carpeta API se encuentra el servidor. Se inicia en el puerto 3000 con "npm start"
+En la carpeta practica-final se encuentra la aplicación de Angular. Iniciar cn "ng serve -o"
 
 ------------descripción general-----------------
+
 He decidido crear un servicio que se va a encargar de hacer las http request al servidor de express.
 Al iniciarse la página y después de cada inserción, actualización y borrado, el controlador hace un get al servidor
 (mediante los métodos del servicio) para mantener actualizada la página. 
