@@ -2,8 +2,11 @@
 
 ---------------instrucciones------------------
 
-En la carpeta API se encuentra el servidor. Se inicia en el puerto 3000 con *"npm start"*
-En la carpeta practica-final se encuentra la aplicación de Angular. Iniciar cn *"ng serve -o"*
+Recomiendo abrir dos ventanas de visual studio y usar la consola que tienen incorporada.
+En cada ventana ejecutamos "npm i" para instalar las dependencias de node.
+En la carpeta API se encuentra el servidor. Se inicia en el puerto 3000 con "npm start"
+En la carpeta practica-final se encuentra la aplicación de Angular. Iniciar cn "ng serve -o"
+
 
 ------------descripción general-----------------
 
